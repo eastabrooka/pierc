@@ -66,7 +66,8 @@ Your MySQL connection id is 5340 to server version: 3.23.54
 
 Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
 
-mysql&gt; CREATE DATABASE pierc;
+mysql&gt; CREATE DATABASE pierc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 Query OK, 1 row affected (0.00 sec)
 
 mysql&gt; GRANT ALL PRIVILEGES ON pierc.* TO "pierc_user"@"hostname"
