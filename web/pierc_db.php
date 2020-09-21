@@ -12,6 +12,9 @@ class db_class
 		$this->_conn = new mysqli( $server.$port, $user, $password , $database);
 		if (!$this->_conn){ die ("Could not connect: " + mysqli_error() ); }
 		
+		// Force Charset UTF8 - Prevent Exceptons from ç and people spamming Triforce. 
+		mysqli_set_charset($this->_conn, "utf8");
+		
 		// Verify that we received a proper time zone, otherwise fall back to default
 		$allZones = DateTimeZone::listIdentifiers();
 		if(!in_array($timezone, $allZones)) {
